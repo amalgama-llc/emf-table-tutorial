@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Automatic-Module-Name: com.amalgamasimulation.tabletutorial.simulation
+Bundle-SymbolicName: com.amalgamasimulation.tabletutorial.simulation;sin
+ gleton:=true
+Bundle-Name: Simulation
+Bundle-Version: 1.0.0
+Bundle-Vendor: Amalgama
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Export-Package: com.amalgamasimulation.tabletutorial.simulation,com.amal
+ gamasimulation.tabletutorial.simulation.graph,com.amalgamasimulation.ta
+ bletutorial.simulation.graph.agents,com.amalgamasimulation.tabletutoria
+ l.simulation.graph.agents.stats.slots
+Require-Bundle: com.amalgamasimulation.tabletutorial.datamodel,com.amalg
+ amasimulation.calendardatamodel,com.amalgamasimulation.ecoreutils,com.a
+ malgamasimulation.engine,com.amalgamasimulation.geometry,com.amalgamasi
+ mulation.graph,com.amalgamasimulation.graphagent,com.amalgamasimulation
+ .randomdatamodel,com.amalgamasimulation.timeseriesdatamodel,com.amalgam
+ asimulation.utils,com.amalgamasimulation.core,com.amalgamasimulation.de
+ sktop.ui.editor
+
