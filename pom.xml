@@ -18,7 +18,7 @@
 	<repositories>
 		<repository>
 			<id>amalgama-platform</id>
-			<url>https://nexus.am-sim.com/repository/amalgama-platform-p2/3.32.12/</url>
+			<url>https://nexus.am-sim.com/repository/amalgama-platform-p2/3.41.2/</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>

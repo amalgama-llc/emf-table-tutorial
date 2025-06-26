@@ -21,7 +21,7 @@ import com.amalgamasimulation.tabletutorial.application.utils.CurrentLocale;
 import com.amalgamasimulation.tabletutorial.application.utils.MessageBoxFactory;
 import com.amalgamasimulation.tabletutorial.application.utils.PerspectiveUtils;
 import com.amalgamasimulation.tabletutorial.application.utils.Messages;
-import com.amalgamasimulation.localization.Util;
+import com.amalgamasimulation.localization.PlatformMessages;
 
 public class SplashHandler {
 	
@@ -53,7 +53,7 @@ public class SplashHandler {
 		PerspectiveUtils.setVisibleForModelingToolBar(perspective.engineToolBarIsVisible, modelService, mainWindow);
 		appState.setCurrentPerspective(perspective);		
 		mainWindow.setLabel(appInfo.getNameAndVersion());
-		Util.APPLICATION_NAME = "tabletutorial";
+		PlatformMessages.APPLICATION_NAME = "tabletutorial";
 			
 
 		eventBroker.subscribe(UIEvents.UILifeCycle.APP_STARTUP_COMPLETE, event -> {
