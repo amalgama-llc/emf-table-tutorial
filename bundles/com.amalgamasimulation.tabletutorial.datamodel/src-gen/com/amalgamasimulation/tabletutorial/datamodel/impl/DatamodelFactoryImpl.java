@@ -59,14 +59,6 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 		switch (eClass.getClassifierID()) {
 		case DatamodelPackage.SCENARIO:
 			return createScenario();
-		case DatamodelPackage.ARC:
-			return createArc();
-		case DatamodelPackage.NODE:
-			return createNode();
-		case DatamodelPackage.POINT:
-			return createPoint();
-		case DatamodelPackage.AGENT:
-			return createAgent();
 		case DatamodelPackage.PERSON_EMF:
 			return createPersonEMF();
 		case DatamodelPackage.CAR_EMF:
@@ -115,50 +107,6 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	public Scenario createScenario() {
 		ScenarioImpl scenario = new ScenarioImpl();
 		return scenario;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Arc createArc() {
-		ArcImpl arc = new ArcImpl();
-		return arc;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Node createNode() {
-		NodeImpl node = new NodeImpl();
-		return node;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Point createPoint() {
-		PointImpl point = new PointImpl();
-		return point;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Agent createAgent() {
-		AgentImpl agent = new AgentImpl();
-		return agent;
 	}
 
 	/**

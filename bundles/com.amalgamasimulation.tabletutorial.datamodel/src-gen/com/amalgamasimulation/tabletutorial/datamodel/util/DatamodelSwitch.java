@@ -73,34 +73,6 @@ public class DatamodelSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DatamodelPackage.ARC: {
-			Arc arc = (Arc) theEObject;
-			T result = caseArc(arc);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DatamodelPackage.NODE: {
-			Node node = (Node) theEObject;
-			T result = caseNode(node);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DatamodelPackage.POINT: {
-			Point point = (Point) theEObject;
-			T result = casePoint(point);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case DatamodelPackage.AGENT: {
-			Agent agent = (Agent) theEObject;
-			T result = caseAgent(agent);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case DatamodelPackage.PERSON_EMF: {
 			PersonEMF personEMF = (PersonEMF) theEObject;
 			T result = casePersonEMF(personEMF);
@@ -132,66 +104,6 @@ public class DatamodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseScenario(Scenario object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Arc</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Arc</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArc(Arc object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Node</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNode(Node object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePoint(Point object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Agent</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Agent</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAgent(Agent object) {
 		return null;
 	}
 

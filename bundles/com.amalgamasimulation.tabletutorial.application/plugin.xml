@@ -16,10 +16,6 @@
                name="appName"
                value="tabletutorial">
          </property>
-         <property
-               name="lifeCycleURI"
-               value="bundleclass://com.amalgamasimulation.tabletutorial.application/com.amalgamasimulation.tabletutorial.application.handlers.SplashHandler">
-         </property>
       </product>
    </extension>
 

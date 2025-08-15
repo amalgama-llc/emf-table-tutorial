@@ -2,6 +2,7 @@
  */
 package com.amalgamasimulation.tabletutorial.datamodel;
 
+import com.amalgamasimulation.randomdatamodel.Distribution;
 import com.amalgamasimulation.timeseriesdatamodel.TimeSeries;
 import java.awt.Color;
 
@@ -282,12 +283,12 @@ public interface PersonEMF extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Visit Distribution</em>' reference.
-	 * @see #setVisitDistribution(com.amalgamasimulation.randomdatamodel.Distribution)
+	 * @see #setVisitDistribution(Distribution)
 	 * @see com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage#getPersonEMF_VisitDistribution()
 	 * @model
 	 * @generated
 	 */
-	com.amalgamasimulation.randomdatamodel.Distribution getVisitDistribution();
+	Distribution getVisitDistribution();
 
 	/**
 	 * Sets the value of the '{@link com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getVisitDistribution <em>Visit Distribution</em>}' reference.
@@ -297,6 +298,6 @@ public interface PersonEMF extends EObject {
 	 * @see #getVisitDistribution()
 	 * @generated
 	 */
-	void setVisitDistribution(com.amalgamasimulation.randomdatamodel.Distribution value);
+	void setVisitDistribution(Distribution value);
 
 } // PersonEMF

@@ -1,13 +1,13 @@
-package com.amalgamasimulation.tabletutorial.application.pages;
+package com.amalgamasimulation.tabletutorial.application.parts.editor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
+import org.eclipse.swt.widgets.Composite;
 
 import com.amalgamasimulation.desktop.binding.ValidationStrategies;
-import com.amalgamasimulation.desktop.ui.editor.pages.AbstractPage;
 import com.amalgamasimulation.desktop.ui.tables.EMFTable;
 import com.amalgamasimulation.desktop.ui.tables.Tables;
 import com.amalgamasimulation.tabletutorial.datamodel.CarEMF;
@@ -15,34 +15,21 @@ import com.amalgamasimulation.tabletutorial.datamodel.Country;
 import com.amalgamasimulation.tabletutorial.datamodel.DatamodelFactory;
 import com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage;
 import com.amalgamasimulation.tabletutorial.datamodel.PersonEMF;
-import com.amalgamasimulation.tabletutorial.datamodel.Scenario;
 import com.amalgamasimulation.utils.format.Formats;
 
-public class PeoplePage extends AbstractPage<PersonEMF, Scenario> {
+import jakarta.annotation.PostConstruct;
+
+public class EmfTablePart {
+
+	private List<PersonEMF> emfPeopleList = new ArrayList<>();
+	private List<CarEMF> emfCars = new ArrayList<>();
 	
-	List<PersonEMF> peopleList = new ArrayList<>();
-	List<CarEMF> cars = new ArrayList<>();
-
-	public PeoplePage() {
-		super(PersonEMF::getScenario);
+	@PostConstruct
+	public void createComposite(Composite parent) {
 		initializeList();
-	}
-
-	@Override
-	protected String getNameClassObject() {
-		return "Person_";
-	}
-
-	@Override
-	public boolean isVisible(Object selectedObject) {
-		return true;
-	}
-
-	@Override
-	protected void createControlsInternal() {
 		
-		EMFTable<PersonEMF> table = Tables.emf(peopleList).parent(parent).create();
-		IObservableList<CarEMF> carsObservable = new WritableList<>(cars, CarEMF.class);	
+		EMFTable<PersonEMF> table = Tables.emf(emfPeopleList).parent(parent).create();
+		IObservableList<CarEMF> carsObservable = new WritableList<>(emfCars, CarEMF.class);	
 		
 		table
 			.column(PersonEMF::getName)
@@ -50,7 +37,6 @@ public class PeoplePage extends AbstractPage<PersonEMF, Scenario> {
 			.emfTextEditor()
 				.feature(DatamodelPackage.Literals.PERSON_EMF__NAME) // corresponding EMF feature
 				.strategy(ValidationStrategies.stringIsNotEmpty()) // validation strategy
-				.handler((person, string) -> {person.setName(string);})
 			.build();
 		
 		table
@@ -58,7 +44,6 @@ public class PeoplePage extends AbstractPage<PersonEMF, Scenario> {
 			.name("Preferential")
 			.emfCheckBoxEditor()
 				.feature(DatamodelPackage.Literals.PERSON_EMF__IS_PREFERENTIAL) // corresponding EMF feature
-				.handler((person, value) -> {person.setIsPreferential(value);})
 			.build();
 				
 		table
@@ -66,7 +51,6 @@ public class PeoplePage extends AbstractPage<PersonEMF, Scenario> {
 			.name("Favourite color")
 			.emfColorEditor()
 				.feature(DatamodelPackage.Literals.PERSON_EMF__FAVOURITE_COLOR) // corresponding EMF feature
-				.handler((person, color) -> {person.setFavouriteColor(color);})
 			.build();
 		
 		table
@@ -74,10 +58,6 @@ public class PeoplePage extends AbstractPage<PersonEMF, Scenario> {
 			.name("Arrive time")
 			.emfLocalTimeEditor()
 				.feature(DatamodelPackage.Literals.PERSON_EMF__ARRIVE_TIME) // corresponding EMF feature
-				.handler((person, time) -> {
-					person.setArriveTime(time);
-					table.refresh();
-				})
 			.build();
 		
 		table
@@ -86,10 +66,6 @@ public class PeoplePage extends AbstractPage<PersonEMF, Scenario> {
 			.format(Formats.getDefaultFormats()::dayMonthHoursMinutes)
 			.emfLocalDateTimeEditor()
 				.feature(DatamodelPackage.Literals.PERSON_EMF__PURCHASE_DATE) // corresponding EMF feature
-				.handler((person, date) -> {
-					person.setPurchaseDate(date);
-					table.refresh();
-					})
 			.build();
 		
 		table
@@ -200,23 +176,24 @@ public class PeoplePage extends AbstractPage<PersonEMF, Scenario> {
 			.build();
 	}
 	
+	
 	private void initializeList() {
-		PersonEMF person1 = DatamodelFactory.eINSTANCE.createPersonEMF();
-		person1.setName("Peter");
-		peopleList.add(person1);
-		PersonEMF person2 = DatamodelFactory.eINSTANCE.createPersonEMF();
-		person2.setName("Alexander");
-		peopleList.add(person2);
+		
+		PersonEMF emfPerson1 = DatamodelFactory.eINSTANCE.createPersonEMF();
+		emfPerson1.setName("Peter");
+		emfPeopleList.add(emfPerson1);
+		PersonEMF emfPerson2 = DatamodelFactory.eINSTANCE.createPersonEMF();
+		emfPerson2.setName("Alexander");
+		emfPeopleList.add(emfPerson2);
 		CarEMF car1 = DatamodelFactory.eINSTANCE.createCarEMF();
 		car1.setNumber(23);
 		CarEMF car2 = DatamodelFactory.eINSTANCE.createCarEMF();
 		car2.setNumber(56);
 		CarEMF car3 = DatamodelFactory.eINSTANCE.createCarEMF();
 		car3.setNumber(77);
-		cars.addAll(List.of(
+		emfCars.addAll(List.of(
 				car1, car2, car3));
 	}
-
 	
 	private String listAsString(List<CarEMF> cars) {
 		String string = cars.stream().map(CarEMF::getNumber).toList().toString();

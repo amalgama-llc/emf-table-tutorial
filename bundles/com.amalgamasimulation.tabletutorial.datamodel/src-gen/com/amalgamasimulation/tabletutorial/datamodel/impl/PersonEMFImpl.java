@@ -2,6 +2,7 @@
  */
 package com.amalgamasimulation.tabletutorial.datamodel.impl;
 
+import com.amalgamasimulation.randomdatamodel.Distribution;
 import com.amalgamasimulation.tabletutorial.datamodel.CarEMF;
 import com.amalgamasimulation.tabletutorial.datamodel.Country;
 import com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage;
@@ -243,7 +244,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	 * @generated
 	 * @ordered
 	 */
-	protected com.amalgamasimulation.randomdatamodel.Distribution visitDistribution;
+	protected Distribution visitDistribution;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -602,11 +603,10 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	 * @generated
 	 */
 	@Override
-	public com.amalgamasimulation.randomdatamodel.Distribution getVisitDistribution() {
+	public Distribution getVisitDistribution() {
 		if (visitDistribution != null && visitDistribution.eIsProxy()) {
 			InternalEObject oldVisitDistribution = (InternalEObject) visitDistribution;
-			visitDistribution = (com.amalgamasimulation.randomdatamodel.Distribution) eResolveProxy(
-					oldVisitDistribution);
+			visitDistribution = (Distribution) eResolveProxy(oldVisitDistribution);
 			if (visitDistribution != oldVisitDistribution) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
@@ -621,7 +621,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public com.amalgamasimulation.randomdatamodel.Distribution basicGetVisitDistribution() {
+	public Distribution basicGetVisitDistribution() {
 		return visitDistribution;
 	}
 
@@ -631,8 +631,8 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	 * @generated
 	 */
 	@Override
-	public void setVisitDistribution(com.amalgamasimulation.randomdatamodel.Distribution newVisitDistribution) {
-		com.amalgamasimulation.randomdatamodel.Distribution oldVisitDistribution = visitDistribution;
+	public void setVisitDistribution(Distribution newVisitDistribution) {
+		Distribution oldVisitDistribution = visitDistribution;
 		visitDistribution = newVisitDistribution;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION,
@@ -761,7 +761,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 			setVisit((TimeSeries) newValue);
 			return;
 		case DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION:
-			setVisitDistribution((com.amalgamasimulation.randomdatamodel.Distribution) newValue);
+			setVisitDistribution((Distribution) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -809,7 +809,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 			setVisit((TimeSeries) null);
 			return;
 		case DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION:
-			setVisitDistribution((com.amalgamasimulation.randomdatamodel.Distribution) null);
+			setVisitDistribution((Distribution) null);
 			return;
 		}
 		super.eUnset(featureID);

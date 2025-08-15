@@ -72,26 +72,6 @@ public class DatamodelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseArc(Arc object) {
-			return createArcAdapter();
-		}
-
-		@Override
-		public Adapter caseNode(Node object) {
-			return createNodeAdapter();
-		}
-
-		@Override
-		public Adapter casePoint(Point object) {
-			return createPointAdapter();
-		}
-
-		@Override
-		public Adapter caseAgent(Agent object) {
-			return createAgentAdapter();
-		}
-
-		@Override
 		public Adapter casePersonEMF(PersonEMF object) {
 			return createPersonEMFAdapter();
 		}
@@ -131,62 +111,6 @@ public class DatamodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScenarioAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.amalgamasimulation.tabletutorial.datamodel.Arc <em>Arc</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.amalgamasimulation.tabletutorial.datamodel.Arc
-	 * @generated
-	 */
-	public Adapter createArcAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.amalgamasimulation.tabletutorial.datamodel.Node <em>Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.amalgamasimulation.tabletutorial.datamodel.Node
-	 * @generated
-	 */
-	public Adapter createNodeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.amalgamasimulation.tabletutorial.datamodel.Point <em>Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.amalgamasimulation.tabletutorial.datamodel.Point
-	 * @generated
-	 */
-	public Adapter createPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.amalgamasimulation.tabletutorial.datamodel.Agent <em>Agent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.amalgamasimulation.tabletutorial.datamodel.Agent
-	 * @generated
-	 */
-	public Adapter createAgentAdapter() {
 		return null;
 	}
 

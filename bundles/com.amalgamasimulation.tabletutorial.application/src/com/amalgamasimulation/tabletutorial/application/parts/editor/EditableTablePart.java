@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
-import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -15,62 +14,19 @@ import org.eclipse.swt.widgets.MessageBox;
 
 import com.amalgamasimulation.desktop.binding.ValidationStrategies;
 import com.amalgamasimulation.desktop.ui.tables.EditableTable;
-import com.amalgamasimulation.desktop.ui.tables.Table;
 import com.amalgamasimulation.desktop.ui.tables.Tables;
 import com.amalgamasimulation.utils.format.Formats;
 import jakarta.annotation.PostConstruct;
 
-public class SamplePart {
+public class EditableTablePart {
 	
 	private List<Car> cars = new ArrayList<>();
 	private List<Person> people = new ArrayList<>();
-	private final Image saveImage = new Image( Display.getDefault(), getClass().getClassLoader().getResourceAsStream( "icons/save_edit.png" ) );
-	private final Image homeImage = new Image( Display.getDefault(), getClass().getClassLoader().getResourceAsStream( "icons/home.png" ) );
-
+	private Image homeImage = new Image( Display.getDefault(), getClass().getClassLoader().getResourceAsStream( "icons/home.png" ) );
+	
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		initializeList();
-		
-		Table<Car> table = Tables
-				.readonly(cars)
-				.parent(parent)
-				.create();
-		table
-			.column(Car::color)
-			.name("Color")
-			.width(100)
-			.format(color -> "")
-			.backgroundColor(Car::color);
-		
-		Font font1 = new Font(parent.getDisplay(), "Arial", 7, 0);
-		Font font2 = new Font(parent.getDisplay(), "Times New Roman", 14, 2);
-		table
-			.column(Car::owner) // getting owner field from every car object
-			.name("Owner")
-			.width(100)
-			.format(Person::getName) // show owner name in cell
-			.font(car -> car.owner().getAge() > 50 ? font1 : font2) // assign font 
-			.fontColor(car -> car.number() % 2 == 0 ? Color.RED : Color.BLUE); // assign font color
-		
-		table
-			.column(car -> car.owner().getAge())
-			.name("Owner age")
-			.width(100)
-			.pseudoHistogramColor(car -> car.owner().getAge() % 2 == 0 ? Color.GREEN : Color.YELLOW); // assign pseudohistogram color
-		
-		table
-			.column(Car::number)
-			.name("Number")
-			.width(100)
-			.icon(car -> car.number() > 100 ? homeImage : saveImage); // assign icon depends on number of car
-		
-		
-		
-		
-		
-		
-		
-		
 		IObservableList<Car> carsObservable = new WritableList<>(cars, Car.class);
 
 		EditableTable<Person> peopleTable = Tables
@@ -86,6 +42,7 @@ public class SamplePart {
 				.strategy(ValidationStrategies.stringIsNotEmpty())
 				.handler((person, name) -> person.setName(name))
 			.build();
+		
 		peopleTable
 			.column(Person::getDiscount)
 			.name("Discount")
@@ -111,12 +68,12 @@ public class SamplePart {
 			.build();
 		
 		peopleTable
-		.column(Person::getCountry)
-		.name("Country")
-		.textEditor()
-			.strategy(ValidationStrategies.stringAny()) // data update strategy
-			.handler((person, country) -> person.setCountry(country)) // send cell value to certain field of object
-		.build();
+			.column(Person::getCountry)
+			.name("Country")
+			.textEditor()
+				.strategy(ValidationStrategies.stringAny()) // data update strategy
+				.handler((person, country) -> person.setCountry(country)) // send cell value to certain field of object
+			.build();
 		
 		peopleTable
 			.column(Person::isPreferential)
@@ -126,9 +83,6 @@ public class SamplePart {
 				.canEdit(person -> person.getAge() > 25) // some cells can be uneditable depends on table item value
 				.format(value -> value ? "YES" : "NO") // change checkbox view
 			.build();
-		
-		
-		
 		
 		peopleTable
 			.column(Person::getCar)
@@ -164,17 +118,17 @@ public class SamplePart {
 				.handler((person, car) -> person.setCar(car))
 				//.maxComboBoxElementsCount(2)
 			.build();
-		peopleTable
-		.column(Person::getCar)
-		.name("Car with max combo box elem count")
-		.format(car -> String.valueOf(car.number()))
-		.dynamicAutoCompleteComboEditor()
-			.elements(carsObservable)
-			.format(car -> String.valueOf(car.number()))
-			.handler((person, car) -> person.setCar(car))
-			.maxComboBoxElementsCount(2)
-		.build();
 		
+		peopleTable
+			.column(Person::getCar)
+			.name("Car with max combo box elem count")
+			.format(car -> String.valueOf(car.number()))
+			.dynamicAutoCompleteComboEditor()
+				.elements(carsObservable)
+				.format(car -> String.valueOf(car.number()))
+				.handler((person, car) -> person.setCar(car))
+				.maxComboBoxElementsCount(2)
+			.build();
 		
 		peopleTable
 			.column(Person::getTown)
@@ -185,10 +139,6 @@ public class SamplePart {
 				.format(Town::getName) // set format of showing enum values in combo list
 				.handler((person, town) -> person.setTown(town)) // handle chosen enum value
 			.build();
-		
-		
-		
-		
 		
 		List<Car> chosenCars = new ArrayList<>();
 		peopleTable
@@ -209,10 +159,7 @@ public class SamplePart {
 					}) // handle list of chosen cars as corresponding field
 				.dialogTitle("available cars") // assign dialog title (optional)
 			.build();
-				
-		
-		
-
+			
 		peopleTable
 			.column(Person::getCountry)
 			.name("Country")
@@ -244,8 +191,6 @@ public class SamplePart {
 				.icon(homeImage) // set icon instead of default button text
 			.build();
 		
-		
-		
 		peopleTable
 			.column(Person::getCar)
 			.name("Car")
@@ -261,10 +206,6 @@ public class SamplePart {
 					}) // handle chosen car value as field of person
 				.dialogTitle("car") // set dialog title
 			.build();
-		
-		
-		
-		
 		
 		peopleTable
 			.column(Person::getPurchaseDate)
@@ -299,7 +240,6 @@ public class SamplePart {
 			.colorEditor()
 				.handler((person, color) -> person.setFavouriteColor(color))
 			.build();
-			
 	}
 	
 	private void initializeList() {

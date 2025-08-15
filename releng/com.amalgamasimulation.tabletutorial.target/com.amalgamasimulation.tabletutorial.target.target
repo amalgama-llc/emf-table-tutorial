@@ -127,6 +127,8 @@
 			<unit id="com.amalgamasimulation.engine.controls" version="0.0.0"/>
 			<unit id="com.amalgamasimulation.service" version="0.0.0"/>
 			<unit id="com.amalgamasimulation.viewupdater.service" version="0.0.0"/>
+			<unit id="com.amalgamasimulation.studies" version="0.0.0"/>
+			<unit id="com.amalgamasimulation.zipper" version="0.0.0"/>
 		</location>
 	</locations>
 </target>

@@ -31,42 +31,6 @@ public interface DatamodelFactory extends EFactory {
 	Scenario createScenario();
 
 	/**
-	 * Returns a new object of class '<em>Arc</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Arc</em>'.
-	 * @generated
-	 */
-	Arc createArc();
-
-	/**
-	 * Returns a new object of class '<em>Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Node</em>'.
-	 * @generated
-	 */
-	Node createNode();
-
-	/**
-	 * Returns a new object of class '<em>Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Point</em>'.
-	 * @generated
-	 */
-	Point createPoint();
-
-	/**
-	 * Returns a new object of class '<em>Agent</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Agent</em>'.
-	 * @generated
-	 */
-	Agent createAgent();
-
-	/**
 	 * Returns a new object of class '<em>Person EMF</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
