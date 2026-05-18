@@ -2,13 +2,13 @@
  */
 package com.amalgamasimulation.tabletutorial.datamodel;
 
-import com.amalgamasimulation.randomdatamodel.Distribution;
 import com.amalgamasimulation.timeseriesdatamodel.TimeSeries;
 import java.awt.Color;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+import org.apache.commons.math3.distribution.RealDistribution;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -176,11 +176,13 @@ public interface PersonEMF extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Cars</b></em>' containment reference list.
 	 * The list contents are of type {@link com.amalgamasimulation.tabletutorial.datamodel.CarEMF}.
+	 * It is bidirectional and its opposite is '{@link com.amalgamasimulation.tabletutorial.datamodel.CarEMF#getPerson <em>Person</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cars</em>' containment reference list.
 	 * @see com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage#getPersonEMF_Cars()
-	 * @model containment="true"
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.CarEMF#getPerson
+	 * @model opposite="person" containment="true"
 	 * @generated
 	 */
 	EList<CarEMF> getCars();
@@ -279,25 +281,25 @@ public interface PersonEMF extends EObject {
 	void setVisit(TimeSeries value);
 
 	/**
-	 * Returns the value of the '<em><b>Visit Distribution</b></em>' reference.
+	 * Returns the value of the '<em><b>Visit Distribution</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Visit Distribution</em>' reference.
-	 * @see #setVisitDistribution(Distribution)
+	 * @return the value of the '<em>Visit Distribution</em>' attribute.
+	 * @see #setVisitDistribution(RealDistribution)
 	 * @see com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage#getPersonEMF_VisitDistribution()
-	 * @model
+	 * @model dataType="com.amalgamasimulation.ecoreutils.RealDistribution"
 	 * @generated
 	 */
-	Distribution getVisitDistribution();
+	RealDistribution getVisitDistribution();
 
 	/**
-	 * Sets the value of the '{@link com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getVisitDistribution <em>Visit Distribution</em>}' reference.
+	 * Sets the value of the '{@link com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getVisitDistribution <em>Visit Distribution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visit Distribution</em>' reference.
+	 * @param value the new value of the '<em>Visit Distribution</em>' attribute.
 	 * @see #getVisitDistribution()
 	 * @generated
 	 */
-	void setVisitDistribution(Distribution value);
+	void setVisitDistribution(RealDistribution value);
 
 } // PersonEMF

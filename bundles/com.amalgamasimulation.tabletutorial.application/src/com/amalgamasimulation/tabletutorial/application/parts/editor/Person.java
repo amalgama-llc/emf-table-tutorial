@@ -3,6 +3,7 @@ package com.amalgamasimulation.tabletutorial.application.parts.editor;
 import java.awt.Color;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 class Person {
@@ -15,7 +16,7 @@ class Person {
 		private Color favouriteColor;
 		private LocalDateTime purchaseDate;
 		private Town town;
-		private List<Car> cars;
+		private List<Car> cars = new ArrayList<>();
 		private LocalTime arriveTime;
 
 		public Person(String name, int age) {

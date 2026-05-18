@@ -17,11 +17,6 @@
 	<distributionManagement/>
 	<repositories>
 		<repository>
-			<id>amalgama-platform</id>
-			<url>https://nexus.am-sim.com/repository/amalgama-platform-p2/3.41.2/</url>
-			<layout>p2</layout>
-		</repository>
-		<repository>
 			<id>bundled-jre</id>
 			<url>https://nexus.am-sim.com/repository/bundled-jre-21-fx/${javafx.version}/</url>
 			<layout>p2</layout>

@@ -14,13 +14,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purchaseDate" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//LocalDateTime"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="favouriteColor" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//Color"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cars" upperBound="-1" eType="#//CarEMF"
-        containment="true"/>
+        containment="true" eOpposite="#//CarEMF/person"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mainCar" eType="#//CarEMF"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
         eOpposite="#//Scenario/people"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="#//Country"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="visit" eType="ecore:EClass ../../com.amalgamasimulation.timeseriesdatamodel/model/timeseriesdatamodel.ecore#//TimeSeries"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="visitDistribution" eType="ecore:EClass ../../com.amalgamasimulation.randomdatamodel/model/randomdatamodel.ecore#//Distribution"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visitDistribution" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//RealDistribution"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Country">
     <eLiterals name="RUSSIA"/>
@@ -30,6 +30,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CarEMF">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//PersonEMF"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//PersonEMF"
+        eOpposite="#//PersonEMF/cars"/>
   </eClassifiers>
 </ecore:EPackage>

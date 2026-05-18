@@ -32,6 +32,14 @@ public class ReadOnlyTablePart {
 				.readonly(cars)
 				.parent(parent)
 				.create();
+		
+		table
+			.column(Car::owner)
+			.name("Owner")
+			.width(100)
+			.format(Person::getName)
+			.tooltip("Additional information about the owner"); 
+
 		table
 			.column(Car::color)
 			.name("Color")
@@ -42,8 +50,9 @@ public class ReadOnlyTablePart {
 		table
 			.column(Car::owner) // getting owner field from every car object
 			.name("Owner")
-			.width(100)
+			.width(150)
 			.format(Person::getName) // show owner name in cell
+			.headerIcon(homeImage)
 			.font(car -> car.owner().getAge() > 50 ? font1 : font2) // assign font 
 			.fontColor(car -> car.number() % 2 == 0 ? Color.RED : Color.BLUE); // assign font color
 		

@@ -204,7 +204,7 @@ public interface DatamodelPackage extends EPackage {
 	int PERSON_EMF__VISIT = 10;
 
 	/**
-	 * The feature id for the '<em><b>Visit Distribution</b></em>' reference.
+	 * The feature id for the '<em><b>Visit Distribution</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,7 +250,7 @@ public interface DatamodelPackage extends EPackage {
 	int CAR_EMF__NUMBER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Person</b></em>' reference.
+	 * The feature id for the '<em><b>Person</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -439,15 +439,15 @@ public interface DatamodelPackage extends EPackage {
 	EReference getPersonEMF_Visit();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getVisitDistribution <em>Visit Distribution</em>}'.
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getVisitDistribution <em>Visit Distribution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Visit Distribution</em>'.
+	 * @return the meta object for the attribute '<em>Visit Distribution</em>'.
 	 * @see com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getVisitDistribution()
 	 * @see #getPersonEMF()
 	 * @generated
 	 */
-	EReference getPersonEMF_VisitDistribution();
+	EAttribute getPersonEMF_VisitDistribution();
 
 	/**
 	 * Returns the meta object for class '{@link com.amalgamasimulation.tabletutorial.datamodel.CarEMF <em>Car EMF</em>}'.
@@ -471,10 +471,10 @@ public interface DatamodelPackage extends EPackage {
 	EAttribute getCarEMF_Number();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.amalgamasimulation.tabletutorial.datamodel.CarEMF#getPerson <em>Person</em>}'.
+	 * Returns the meta object for the container reference '{@link com.amalgamasimulation.tabletutorial.datamodel.CarEMF#getPerson <em>Person</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Person</em>'.
+	 * @return the meta object for the container reference '<em>Person</em>'.
 	 * @see com.amalgamasimulation.tabletutorial.datamodel.CarEMF#getPerson()
 	 * @see #getCarEMF()
 	 * @generated
@@ -631,12 +631,12 @@ public interface DatamodelPackage extends EPackage {
 		EReference PERSON_EMF__VISIT = eINSTANCE.getPersonEMF_Visit();
 
 		/**
-		 * The meta object literal for the '<em><b>Visit Distribution</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Visit Distribution</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PERSON_EMF__VISIT_DISTRIBUTION = eINSTANCE.getPersonEMF_VisitDistribution();
+		EAttribute PERSON_EMF__VISIT_DISTRIBUTION = eINSTANCE.getPersonEMF_VisitDistribution();
 
 		/**
 		 * The meta object literal for the '{@link com.amalgamasimulation.tabletutorial.datamodel.impl.CarEMFImpl <em>Car EMF</em>}' class.
@@ -657,7 +657,7 @@ public interface DatamodelPackage extends EPackage {
 		EAttribute CAR_EMF__NUMBER = eINSTANCE.getCarEMF_Number();
 
 		/**
-		 * The meta object literal for the '<em><b>Person</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Person</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

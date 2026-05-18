@@ -45,22 +45,24 @@ public interface CarEMF extends EObject {
 	void setNumber(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Person</b></em>' reference.
+	 * Returns the value of the '<em><b>Person</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getCars <em>Cars</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Person</em>' reference.
+	 * @return the value of the '<em>Person</em>' container reference.
 	 * @see #setPerson(PersonEMF)
 	 * @see com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage#getCarEMF_Person()
-	 * @model
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.PersonEMF#getCars
+	 * @model opposite="cars" transient="false"
 	 * @generated
 	 */
 	PersonEMF getPerson();
 
 	/**
-	 * Sets the value of the '{@link com.amalgamasimulation.tabletutorial.datamodel.CarEMF#getPerson <em>Person</em>}' reference.
+	 * Sets the value of the '{@link com.amalgamasimulation.tabletutorial.datamodel.CarEMF#getPerson <em>Person</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Person</em>' reference.
+	 * @param value the new value of the '<em>Person</em>' container reference.
 	 * @see #getPerson()
 	 * @generated
 	 */

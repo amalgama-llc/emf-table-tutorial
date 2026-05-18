@@ -7,7 +7,7 @@
     modelPluginID="com.amalgamasimulation.tabletutorial.datamodel" modelName="Datamodel"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
-    usedGenPackages="../../com.amalgamasimulation.ecoreutils/model/ecoreutils.genmodel#//ecoreutils ../../com.amalgamasimulation.randomdatamodel/model/randomdatamodel.genmodel#//randomdatamodel ../../com.amalgamasimulation.timeseriesdatamodel/model/timeseriesdatamodel.genmodel#//timeseriesdatamodel ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    usedGenPackages="../../com.amalgamasimulation.ecoreutils/model/ecoreutils.genmodel#//ecoreutils ../../com.amalgamasimulation.timeseriesdatamodel/model/timeseriesdatamodel.genmodel#//timeseriesdatamodel ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>datamodel.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>

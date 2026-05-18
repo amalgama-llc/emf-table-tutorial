@@ -13,11 +13,10 @@ Export-Package: com.amalgamasimulation.tabletutorial.datamodel,
  com.amalgamasimulation.tabletutorial.datamodel.data,
  com.amalgamasimulation.tabletutorial.datamodel.impl,
  com.amalgamasimulation.tabletutorial.datamodel.util
-Require-Bundle: com.amalgamasimulation.calendardatamodel;visibility:=reexport,
- com.amalgamasimulation.ecoreutils;visibility:=reexport,
- com.amalgamasimulation.randomdatamodel;visibility:=reexport,
+Require-Bundle: com.amalgamasimulation.ecoreutils;visibility:=reexport,
  com.amalgamasimulation.timeseriesdatamodel;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- com.amalgamasimulation.emf.excel
+ com.amalgamasimulation.emf.excel,
+ org.apache.commons.math3;bundle-version="3.6.1"
 

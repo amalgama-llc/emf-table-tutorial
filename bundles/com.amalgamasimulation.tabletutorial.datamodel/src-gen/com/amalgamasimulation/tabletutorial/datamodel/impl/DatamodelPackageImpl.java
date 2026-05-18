@@ -3,8 +3,6 @@
 package com.amalgamasimulation.tabletutorial.datamodel.impl;
 
 import com.amalgamasimulation.ecoreutils.EcoreutilsPackage;
-
-import com.amalgamasimulation.randomdatamodel.RandomdatamodelPackage;
 import com.amalgamasimulation.tabletutorial.datamodel.CarEMF;
 import com.amalgamasimulation.tabletutorial.datamodel.Country;
 import com.amalgamasimulation.tabletutorial.datamodel.DatamodelFactory;
@@ -109,7 +107,6 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 
 		// Initialize simple dependencies
 		EcoreutilsPackage.eINSTANCE.eClass();
-		RandomdatamodelPackage.eINSTANCE.eClass();
 		TimeseriesdatamodelPackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
 
@@ -273,8 +270,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getPersonEMF_VisitDistribution() {
-		return (EReference) personEMFEClass.getEStructuralFeatures().get(11);
+	public EAttribute getPersonEMF_VisitDistribution() {
+		return (EAttribute) personEMFEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -362,7 +359,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		createEReference(personEMFEClass, PERSON_EMF__SCENARIO);
 		createEAttribute(personEMFEClass, PERSON_EMF__COUNTRY);
 		createEReference(personEMFEClass, PERSON_EMF__VISIT);
-		createEReference(personEMFEClass, PERSON_EMF__VISIT_DISTRIBUTION);
+		createEAttribute(personEMFEClass, PERSON_EMF__VISIT_DISTRIBUTION);
 
 		carEMFEClass = createEClass(CAR_EMF);
 		createEAttribute(carEMFEClass, CAR_EMF__NUMBER);
@@ -401,8 +398,6 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 				.getEPackage(EcoreutilsPackage.eNS_URI);
 		TimeseriesdatamodelPackage theTimeseriesdatamodelPackage = (TimeseriesdatamodelPackage) EPackage.Registry.INSTANCE
 				.getEPackage(TimeseriesdatamodelPackage.eNS_URI);
-		RandomdatamodelPackage theRandomdatamodelPackage = (RandomdatamodelPackage) EPackage.Registry.INSTANCE
-				.getEPackage(RandomdatamodelPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -435,9 +430,9 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		initEAttribute(getPersonEMF_FavouriteColor(), theEcoreutilsPackage.getColor(), "favouriteColor", null, 0, 1,
 				PersonEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getPersonEMF_Cars(), this.getCarEMF(), null, "cars", null, 0, -1, PersonEMF.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getPersonEMF_Cars(), this.getCarEMF(), this.getCarEMF_Person(), "cars", null, 0, -1,
+				PersonEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPersonEMF_MainCar(), this.getCarEMF(), null, "mainCar", null, 0, 1, PersonEMF.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -449,16 +444,16 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		initEReference(getPersonEMF_Visit(), theTimeseriesdatamodelPackage.getTimeSeries(), null, "visit", null, 0, 1,
 				PersonEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPersonEMF_VisitDistribution(), theRandomdatamodelPackage.getDistribution(), null,
+		initEAttribute(getPersonEMF_VisitDistribution(), theEcoreutilsPackage.getRealDistribution(),
 				"visitDistribution", null, 0, 1, PersonEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(carEMFEClass, CarEMF.class, "CarEMF", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCarEMF_Number(), ecorePackage.getEInt(), "number", null, 0, 1, CarEMF.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCarEMF_Person(), this.getPersonEMF(), null, "person", null, 0, 1, CarEMF.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getCarEMF_Person(), this.getPersonEMF(), this.getPersonEMF_Cars(), "person", null, 0, 1,
+				CarEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(countryEEnum, Country.class, "Country");

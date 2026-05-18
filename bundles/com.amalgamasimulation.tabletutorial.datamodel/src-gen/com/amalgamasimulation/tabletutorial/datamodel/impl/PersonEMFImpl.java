@@ -2,7 +2,6 @@
  */
 package com.amalgamasimulation.tabletutorial.datamodel.impl;
 
-import com.amalgamasimulation.randomdatamodel.Distribution;
 import com.amalgamasimulation.tabletutorial.datamodel.CarEMF;
 import com.amalgamasimulation.tabletutorial.datamodel.Country;
 import com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage;
@@ -17,6 +16,7 @@ import java.time.LocalTime;
 
 import java.util.Collection;
 
+import org.apache.commons.math3.distribution.RealDistribution;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -27,8 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -237,14 +236,24 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	protected TimeSeries visit;
 
 	/**
-	 * The cached value of the '{@link #getVisitDistribution() <em>Visit Distribution</em>}' reference.
+	 * The default value of the '{@link #getVisitDistribution() <em>Visit Distribution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVisitDistribution()
 	 * @generated
 	 * @ordered
 	 */
-	protected Distribution visitDistribution;
+	protected static final RealDistribution VISIT_DISTRIBUTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getVisitDistribution() <em>Visit Distribution</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisitDistribution()
+	 * @generated
+	 * @ordered
+	 */
+	protected RealDistribution visitDistribution = VISIT_DISTRIBUTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -415,7 +424,8 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	@Override
 	public EList<CarEMF> getCars() {
 		if (cars == null) {
-			cars = new EObjectContainmentEList<CarEMF>(CarEMF.class, this, DatamodelPackage.PERSON_EMF__CARS);
+			cars = new EObjectContainmentWithInverseEList<CarEMF>(CarEMF.class, this, DatamodelPackage.PERSON_EMF__CARS,
+					DatamodelPackage.CAR_EMF__PERSON);
 		}
 		return cars;
 	}
@@ -603,25 +613,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	 * @generated
 	 */
 	@Override
-	public Distribution getVisitDistribution() {
-		if (visitDistribution != null && visitDistribution.eIsProxy()) {
-			InternalEObject oldVisitDistribution = (InternalEObject) visitDistribution;
-			visitDistribution = (Distribution) eResolveProxy(oldVisitDistribution);
-			if (visitDistribution != oldVisitDistribution) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION, oldVisitDistribution, visitDistribution));
-			}
-		}
-		return visitDistribution;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Distribution basicGetVisitDistribution() {
+	public RealDistribution getVisitDistribution() {
 		return visitDistribution;
 	}
 
@@ -631,8 +623,8 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	 * @generated
 	 */
 	@Override
-	public void setVisitDistribution(Distribution newVisitDistribution) {
-		Distribution oldVisitDistribution = visitDistribution;
+	public void setVisitDistribution(RealDistribution newVisitDistribution) {
+		RealDistribution oldVisitDistribution = visitDistribution;
 		visitDistribution = newVisitDistribution;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION,
@@ -648,6 +640,8 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case DatamodelPackage.PERSON_EMF__CARS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCars()).basicAdd(otherEnd, msgs);
 		case DatamodelPackage.PERSON_EMF__SCENARIO:
 			if (scenario != null)
 				msgs = ((InternalEObject) scenario).eInverseRemove(this, DatamodelPackage.SCENARIO__PEOPLE,
@@ -710,9 +704,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 				return getVisit();
 			return basicGetVisit();
 		case DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION:
-			if (resolve)
-				return getVisitDistribution();
-			return basicGetVisitDistribution();
+			return getVisitDistribution();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -761,7 +753,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 			setVisit((TimeSeries) newValue);
 			return;
 		case DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION:
-			setVisitDistribution((Distribution) newValue);
+			setVisitDistribution((RealDistribution) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -809,7 +801,7 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 			setVisit((TimeSeries) null);
 			return;
 		case DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION:
-			setVisitDistribution((Distribution) null);
+			setVisitDistribution(VISIT_DISTRIBUTION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -847,7 +839,8 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 		case DatamodelPackage.PERSON_EMF__VISIT:
 			return visit != null;
 		case DatamodelPackage.PERSON_EMF__VISIT_DISTRIBUTION:
-			return visitDistribution != null;
+			return VISIT_DISTRIBUTION_EDEFAULT == null ? visitDistribution != null
+					: !VISIT_DISTRIBUTION_EDEFAULT.equals(visitDistribution);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -877,6 +870,8 @@ public class PersonEMFImpl extends MinimalEObjectImpl.Container implements Perso
 		result.append(favouriteColor);
 		result.append(", country: ");
 		result.append(country);
+		result.append(", visitDistribution: ");
+		result.append(visitDistribution);
 		result.append(')');
 		return result.toString();
 	}

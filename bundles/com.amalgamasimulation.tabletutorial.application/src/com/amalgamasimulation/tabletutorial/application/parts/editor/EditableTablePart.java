@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
@@ -140,14 +141,13 @@ public class EditableTablePart {
 				.handler((person, town) -> person.setTown(town)) // handle chosen enum value
 			.build();
 		
-		List<Car> chosenCars = new ArrayList<>();
 		peopleTable
 			.column(Person::getCars)
 			.name("Cars")
 			.format(this::listFormat) // set function which perform list as string
 			.<Car>multiObjectsSelectionDialogEditor() // assign list elements type as generic
 				.elements(carsObservable) // observable list of all cars available to choose
-				.selectedElements(chosenCars) // list of chosen cars
+				.selectedElements(person -> person.getCars()) // list of chosen cars
 				.columns(dialogTable -> {
 					dialogTable.column(Car::number).name("Number");
 				}) // create dialog table
@@ -156,8 +156,10 @@ public class EditableTablePart {
 					MessageBox messageBox = new MessageBox(parent.getShell(), 1 << 1);
 					messageBox.setMessage("The cars are selected");
 					messageBox.open();
+					peopleTable.refresh();
 					}) // handle list of chosen cars as corresponding field
-				.dialogTitle("available cars") // assign dialog title (optional)
+			    .dialogTitle("Car selection dialog") 
+			    .dialogSubTitle("Select cars and confirm selection") 
 			.build();
 			
 		peopleTable
@@ -204,7 +206,8 @@ public class EditableTablePart {
 					messageBox.setMessage(String.format("The car with number %d is selected", car.number()));
 					messageBox.open();
 					}) // handle chosen car value as field of person
-				.dialogTitle("car") // set dialog title
+			    .dialogTitle("Car selection dialog") 
+			    .dialogSubTitle("Select car and confirm selection") 
 			.build();
 		
 		peopleTable
@@ -244,18 +247,22 @@ public class EditableTablePart {
 	
 	private void initializeList() {
 		Person person1 = new Person("Alexander", 20);
+		Car car1 = new Car(81, person1, Color.RED);
+		person1.getCars().add(car1);
+		
 		Person person2 = new Person("Harry", 56);
+		Car car2 = new Car(125, person2, Color.BLUE);
+		person2.getCars().add(car2);
+		
 		Person person3 = new Person("Peter", 49);
+		Car car3 = new Car(38, person3, Color.GREEN);
+		person3.getCars().add(car3);
+		
 		people.addAll(List.of(person1, person2, person3));
-		cars.addAll(List.of(
-				new Car(81, person1, Color.RED),
-				new Car(125, person2, Color.BLUE),
-				new Car(38, person3, Color.GREEN)));
+		cars.addAll(List.of(car1,car2,car3));
 	}
 	
-	private <T> String listFormat(List<T> list) {
-		StringBuilder stringBuilder = new StringBuilder();
-		list.forEach(item -> stringBuilder.append(item).append(", "));
-		return stringBuilder.toString();
+	private String listFormat(List<Car> list) {
+		return list.stream().map(c -> c.number() + "").collect(Collectors.joining(", "));
 	}
 }
