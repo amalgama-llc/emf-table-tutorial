@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.swt.widgets.Composite;
 
 import com.amalgamasimulation.desktop.binding.ValidationStrategies;
-import com.amalgamasimulation.desktop.ui.editor.commands.CommandFactory;
 import com.amalgamasimulation.desktop.ui.tables.EMFTable;
 import com.amalgamasimulation.desktop.ui.tables.Tables;
 import com.amalgamasimulation.tabletutorial.datamodel.CarEMF;

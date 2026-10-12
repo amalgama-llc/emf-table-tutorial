@@ -7,9 +7,12 @@ import com.amalgamasimulation.tabletutorial.datamodel.CarEMF;
 import com.amalgamasimulation.tabletutorial.datamodel.Country;
 import com.amalgamasimulation.tabletutorial.datamodel.DatamodelFactory;
 import com.amalgamasimulation.tabletutorial.datamodel.DatamodelPackage;
+import com.amalgamasimulation.tabletutorial.datamodel.DriverEMF;
 import com.amalgamasimulation.tabletutorial.datamodel.PersonEMF;
 import com.amalgamasimulation.tabletutorial.datamodel.Scenario;
 
+import com.amalgamasimulation.tabletutorial.datamodel.TruckEMF;
+import com.amalgamasimulation.tabletutorial.datamodel.TruckType;
 import com.amalgamasimulation.timeseriesdatamodel.TimeseriesdatamodelPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -53,7 +56,28 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass truckEMFEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass driverEMFEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum countryEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum truckTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -142,6 +166,26 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	@Override
 	public EReference getScenario_People() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScenario_Trucks() {
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScenario_Drivers() {
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -310,8 +354,158 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	@Override
+	public EClass getTruckEMF() {
+		return truckEMFEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_Name() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_Capacity() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_Active() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_Type() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTruckEMF_Driver() {
+		return (EReference) truckEMFEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_Axles() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_LastService() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_DepartureTime() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_Color() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckEMF_LoadingTime() {
+		return (EAttribute) truckEMFEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTruckEMF_Schedule() {
+		return (EReference) truckEMFEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDriverEMF() {
+		return driverEMFEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDriverEMF_Name() {
+		return (EAttribute) driverEMFEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getCountry() {
 		return countryEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getTruckType() {
+		return truckTypeEEnum;
 	}
 
 	/**
@@ -346,6 +540,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		// Create classes and their features
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__PEOPLE);
+		createEReference(scenarioEClass, SCENARIO__TRUCKS);
+		createEReference(scenarioEClass, SCENARIO__DRIVERS);
 
 		personEMFEClass = createEClass(PERSON_EMF);
 		createEAttribute(personEMFEClass, PERSON_EMF__ID);
@@ -365,8 +561,25 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		createEAttribute(carEMFEClass, CAR_EMF__NUMBER);
 		createEReference(carEMFEClass, CAR_EMF__PERSON);
 
+		truckEMFEClass = createEClass(TRUCK_EMF);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__NAME);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__CAPACITY);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__ACTIVE);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__TYPE);
+		createEReference(truckEMFEClass, TRUCK_EMF__DRIVER);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__AXLES);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__LAST_SERVICE);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__DEPARTURE_TIME);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__COLOR);
+		createEAttribute(truckEMFEClass, TRUCK_EMF__LOADING_TIME);
+		createEReference(truckEMFEClass, TRUCK_EMF__SCHEDULE);
+
+		driverEMFEClass = createEClass(DRIVER_EMF);
+		createEAttribute(driverEMFEClass, DRIVER_EMF__NAME);
+
 		// Create enums
 		countryEEnum = createEEnum(COUNTRY);
+		truckTypeEEnum = createEEnum(TRUCK_TYPE);
 	}
 
 	/**
@@ -411,6 +624,12 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		initEReference(getScenario_People(), this.getPersonEMF(), this.getPersonEMF_Scenario(), "people", null, 0, -1,
 				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_Trucks(), this.getTruckEMF(), null, "trucks", null, 0, -1, Scenario.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_Drivers(), this.getDriverEMF(), null, "drivers", null, 0, -1, Scenario.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(personEMFEClass, PersonEMF.class, "PersonEMF", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -455,12 +674,52 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 				CarEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(truckEMFEClass, TruckEMF.class, "TruckEMF", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTruckEMF_Name(), ecorePackage.getEString(), "name", null, 0, 1, TruckEMF.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_Capacity(), ecorePackage.getEDouble(), "capacity", null, 0, 1, TruckEMF.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, TruckEMF.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_Type(), this.getTruckType(), "type", null, 0, 1, TruckEMF.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTruckEMF_Driver(), this.getDriverEMF(), null, "driver", null, 0, 1, TruckEMF.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_Axles(), ecorePackage.getEInt(), "axles", null, 0, 1, TruckEMF.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_LastService(), theEcoreutilsPackage.getLocalDateTime(), "lastService", null, 0, 1,
+				TruckEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_DepartureTime(), theEcoreutilsPackage.getLocalTime(), "departureTime", null, 0, 1,
+				TruckEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_Color(), theEcoreutilsPackage.getColor(), "color", null, 0, 1, TruckEMF.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckEMF_LoadingTime(), theEcoreutilsPackage.getRealDistribution(), "loadingTime", null, 0, 1,
+				TruckEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getTruckEMF_Schedule(), theTimeseriesdatamodelPackage.getTimeSeries(), null, "schedule", null, 0,
+				1, TruckEMF.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(driverEMFEClass, DriverEMF.class, "DriverEMF", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDriverEMF_Name(), ecorePackage.getEString(), "name", null, 0, 1, DriverEMF.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(countryEEnum, Country.class, "Country");
 		addEEnumLiteral(countryEEnum, Country.RUSSIA);
 		addEEnumLiteral(countryEEnum, Country.GERMANY);
 		addEEnumLiteral(countryEEnum, Country.PORTUGAL);
 		addEEnumLiteral(countryEEnum, Country.ITALY);
+
+		initEEnum(truckTypeEEnum, TruckType.class, "TruckType");
+		addEEnumLiteral(truckTypeEEnum, TruckType.FLATBED);
+		addEEnumLiteral(truckTypeEEnum, TruckType.REFRIGERATOR);
+		addEEnumLiteral(truckTypeEEnum, TruckType.DUMP_TRUCK);
 
 		// Create resource
 		createResource(eNS_URI);

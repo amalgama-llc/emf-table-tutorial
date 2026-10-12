@@ -19,8 +19,15 @@
       <genEnumLiterals ecoreEnumLiteral="datamodel.ecore#//Country/PORTUGAL"/>
       <genEnumLiterals ecoreEnumLiteral="datamodel.ecore#//Country/ITALY"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="datamodel.ecore#//TruckType">
+      <genEnumLiterals ecoreEnumLiteral="datamodel.ecore#//TruckType/FLATBED"/>
+      <genEnumLiterals ecoreEnumLiteral="datamodel.ecore#//TruckType/REFRIGERATOR"/>
+      <genEnumLiterals ecoreEnumLiteral="datamodel.ecore#//TruckType/DUMP_TRUCK"/>
+    </genEnums>
     <genClasses ecoreClass="datamodel.ecore#//Scenario">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/people"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/trucks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/drivers"/>
     </genClasses>
     <genClasses ecoreClass="datamodel.ecore#//PersonEMF">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//PersonEMF/id"/>
@@ -34,11 +41,27 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//PersonEMF/scenario"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//PersonEMF/country"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//PersonEMF/visit"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//PersonEMF/visitDistribution"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute datamodel.ecore#//PersonEMF/visitDistribution"/>
     </genClasses>
     <genClasses ecoreClass="datamodel.ecore#//CarEMF">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//CarEMF/number"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//CarEMF/person"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//TruckEMF">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/capacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/active"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//TruckEMF/driver"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/axles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/lastService"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/departureTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckEMF/loadingTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//TruckEMF/schedule"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//DriverEMF">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//DriverEMF/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

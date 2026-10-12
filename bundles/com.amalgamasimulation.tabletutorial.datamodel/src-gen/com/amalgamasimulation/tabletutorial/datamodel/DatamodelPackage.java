@@ -77,13 +77,31 @@ public interface DatamodelPackage extends EPackage {
 	int SCENARIO__PEOPLE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Trucks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__TRUCKS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Drivers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__DRIVERS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 1;
+	int SCENARIO_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -277,6 +295,170 @@ public interface DatamodelPackage extends EPackage {
 	int CAR_EMF_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.amalgamasimulation.tabletutorial.datamodel.impl.TruckEMFImpl <em>Truck EMF</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.TruckEMFImpl
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DatamodelPackageImpl#getTruckEMF()
+	 * @generated
+	 */
+	int TRUCK_EMF = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Capacity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__CAPACITY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__ACTIVE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__TYPE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Driver</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__DRIVER = 4;
+
+	/**
+	 * The feature id for the '<em><b>Axles</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__AXLES = 5;
+
+	/**
+	 * The feature id for the '<em><b>Last Service</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__LAST_SERVICE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Departure Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__DEPARTURE_TIME = 7;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__COLOR = 8;
+
+	/**
+	 * The feature id for the '<em><b>Loading Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__LOADING_TIME = 9;
+
+	/**
+	 * The feature id for the '<em><b>Schedule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF__SCHEDULE = 10;
+
+	/**
+	 * The number of structural features of the '<em>Truck EMF</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF_FEATURE_COUNT = 11;
+
+	/**
+	 * The number of operations of the '<em>Truck EMF</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_EMF_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link com.amalgamasimulation.tabletutorial.datamodel.impl.DriverEMFImpl <em>Driver EMF</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DriverEMFImpl
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DatamodelPackageImpl#getDriverEMF()
+	 * @generated
+	 */
+	int DRIVER_EMF = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRIVER_EMF__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Driver EMF</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRIVER_EMF_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Driver EMF</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRIVER_EMF_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link com.amalgamasimulation.tabletutorial.datamodel.Country <em>Country</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -284,7 +466,17 @@ public interface DatamodelPackage extends EPackage {
 	 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DatamodelPackageImpl#getCountry()
 	 * @generated
 	 */
-	int COUNTRY = 3;
+	int COUNTRY = 5;
+
+	/**
+	 * The meta object id for the '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckType <em>Truck Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckType
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DatamodelPackageImpl#getTruckType()
+	 * @generated
+	 */
+	int TRUCK_TYPE = 6;
 
 	/**
 	 * Returns the meta object for class '{@link com.amalgamasimulation.tabletutorial.datamodel.Scenario <em>Scenario</em>}'.
@@ -306,6 +498,28 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getScenario_People();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.amalgamasimulation.tabletutorial.datamodel.Scenario#getTrucks <em>Trucks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Trucks</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.Scenario#getTrucks()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_Trucks();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.amalgamasimulation.tabletutorial.datamodel.Scenario#getDrivers <em>Drivers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Drivers</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.Scenario#getDrivers()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_Drivers();
 
 	/**
 	 * Returns the meta object for class '{@link com.amalgamasimulation.tabletutorial.datamodel.PersonEMF <em>Person EMF</em>}'.
@@ -482,6 +696,158 @@ public interface DatamodelPackage extends EPackage {
 	EReference getCarEMF_Person();
 
 	/**
+	 * Returns the meta object for class '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF <em>Truck EMF</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Truck EMF</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF
+	 * @generated
+	 */
+	EClass getTruckEMF();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getName()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getCapacity <em>Capacity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Capacity</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getCapacity()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_Capacity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#isActive <em>Active</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Active</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#isActive()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_Active();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getType()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_Type();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getDriver <em>Driver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Driver</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getDriver()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EReference getTruckEMF_Driver();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getAxles <em>Axles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Axles</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getAxles()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_Axles();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getLastService <em>Last Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Service</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getLastService()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_LastService();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getDepartureTime <em>Departure Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Departure Time</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getDepartureTime()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_DepartureTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getColor()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_Color();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getLoadingTime <em>Loading Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Loading Time</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getLoadingTime()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EAttribute getTruckEMF_LoadingTime();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getSchedule <em>Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Schedule</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF#getSchedule()
+	 * @see #getTruckEMF()
+	 * @generated
+	 */
+	EReference getTruckEMF_Schedule();
+
+	/**
+	 * Returns the meta object for class '{@link com.amalgamasimulation.tabletutorial.datamodel.DriverEMF <em>Driver EMF</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Driver EMF</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.DriverEMF
+	 * @generated
+	 */
+	EClass getDriverEMF();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.amalgamasimulation.tabletutorial.datamodel.DriverEMF#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.DriverEMF#getName()
+	 * @see #getDriverEMF()
+	 * @generated
+	 */
+	EAttribute getDriverEMF_Name();
+
+	/**
 	 * Returns the meta object for enum '{@link com.amalgamasimulation.tabletutorial.datamodel.Country <em>Country</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -490,6 +856,16 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getCountry();
+
+	/**
+	 * Returns the meta object for enum '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckType <em>Truck Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Truck Type</em>'.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckType
+	 * @generated
+	 */
+	EEnum getTruckType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -531,6 +907,22 @@ public interface DatamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCENARIO__PEOPLE = eINSTANCE.getScenario_People();
+
+		/**
+		 * The meta object literal for the '<em><b>Trucks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__TRUCKS = eINSTANCE.getScenario_Trucks();
+
+		/**
+		 * The meta object literal for the '<em><b>Drivers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__DRIVERS = eINSTANCE.getScenario_Drivers();
 
 		/**
 		 * The meta object literal for the '{@link com.amalgamasimulation.tabletutorial.datamodel.impl.PersonEMFImpl <em>Person EMF</em>}' class.
@@ -665,6 +1057,122 @@ public interface DatamodelPackage extends EPackage {
 		EReference CAR_EMF__PERSON = eINSTANCE.getCarEMF_Person();
 
 		/**
+		 * The meta object literal for the '{@link com.amalgamasimulation.tabletutorial.datamodel.impl.TruckEMFImpl <em>Truck EMF</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.TruckEMFImpl
+		 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DatamodelPackageImpl#getTruckEMF()
+		 * @generated
+		 */
+		EClass TRUCK_EMF = eINSTANCE.getTruckEMF();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__NAME = eINSTANCE.getTruckEMF_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Capacity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__CAPACITY = eINSTANCE.getTruckEMF_Capacity();
+
+		/**
+		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__ACTIVE = eINSTANCE.getTruckEMF_Active();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__TYPE = eINSTANCE.getTruckEMF_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Driver</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRUCK_EMF__DRIVER = eINSTANCE.getTruckEMF_Driver();
+
+		/**
+		 * The meta object literal for the '<em><b>Axles</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__AXLES = eINSTANCE.getTruckEMF_Axles();
+
+		/**
+		 * The meta object literal for the '<em><b>Last Service</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__LAST_SERVICE = eINSTANCE.getTruckEMF_LastService();
+
+		/**
+		 * The meta object literal for the '<em><b>Departure Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__DEPARTURE_TIME = eINSTANCE.getTruckEMF_DepartureTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__COLOR = eINSTANCE.getTruckEMF_Color();
+
+		/**
+		 * The meta object literal for the '<em><b>Loading Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_EMF__LOADING_TIME = eINSTANCE.getTruckEMF_LoadingTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Schedule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRUCK_EMF__SCHEDULE = eINSTANCE.getTruckEMF_Schedule();
+
+		/**
+		 * The meta object literal for the '{@link com.amalgamasimulation.tabletutorial.datamodel.impl.DriverEMFImpl <em>Driver EMF</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DriverEMFImpl
+		 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DatamodelPackageImpl#getDriverEMF()
+		 * @generated
+		 */
+		EClass DRIVER_EMF = eINSTANCE.getDriverEMF();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DRIVER_EMF__NAME = eINSTANCE.getDriverEMF_Name();
+
+		/**
 		 * The meta object literal for the '{@link com.amalgamasimulation.tabletutorial.datamodel.Country <em>Country</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -673,6 +1181,16 @@ public interface DatamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COUNTRY = eINSTANCE.getCountry();
+
+		/**
+		 * The meta object literal for the '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckType <em>Truck Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckType
+		 * @see com.amalgamasimulation.tabletutorial.datamodel.impl.DatamodelPackageImpl#getTruckType()
+		 * @generated
+		 */
+		EEnum TRUCK_TYPE = eINSTANCE.getTruckType();
 
 	}
 

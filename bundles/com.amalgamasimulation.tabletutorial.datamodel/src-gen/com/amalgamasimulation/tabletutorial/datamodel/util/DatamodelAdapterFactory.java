@@ -82,6 +82,16 @@ public class DatamodelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTruckEMF(TruckEMF object) {
+			return createTruckEMFAdapter();
+		}
+
+		@Override
+		public Adapter caseDriverEMF(DriverEMF object) {
+			return createDriverEMFAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -139,6 +149,34 @@ public class DatamodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCarEMFAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.amalgamasimulation.tabletutorial.datamodel.TruckEMF <em>Truck EMF</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.TruckEMF
+	 * @generated
+	 */
+	public Adapter createTruckEMFAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.amalgamasimulation.tabletutorial.datamodel.DriverEMF <em>Driver EMF</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.amalgamasimulation.tabletutorial.datamodel.DriverEMF
+	 * @generated
+	 */
+	public Adapter createDriverEMFAdapter() {
 		return null;
 	}
 

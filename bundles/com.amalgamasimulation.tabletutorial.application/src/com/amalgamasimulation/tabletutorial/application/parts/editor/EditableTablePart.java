@@ -17,6 +17,7 @@ import com.amalgamasimulation.desktop.binding.ValidationStrategies;
 import com.amalgamasimulation.desktop.ui.tables.EditableTable;
 import com.amalgamasimulation.desktop.ui.tables.Tables;
 import com.amalgamasimulation.utils.format.Formats;
+
 import jakarta.annotation.PostConstruct;
 
 public class EditableTablePart {

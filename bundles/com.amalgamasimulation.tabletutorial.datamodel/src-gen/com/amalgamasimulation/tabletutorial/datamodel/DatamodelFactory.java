@@ -49,6 +49,24 @@ public interface DatamodelFactory extends EFactory {
 	CarEMF createCarEMF();
 
 	/**
+	 * Returns a new object of class '<em>Truck EMF</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Truck EMF</em>'.
+	 * @generated
+	 */
+	TruckEMF createTruckEMF();
+
+	/**
+	 * Returns a new object of class '<em>Driver EMF</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Driver EMF</em>'.
+	 * @generated
+	 */
+	DriverEMF createDriverEMF();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

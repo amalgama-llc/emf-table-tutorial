@@ -4,6 +4,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
     <eStructuralFeatures xsi:type="ecore:EReference" name="people" upperBound="-1"
         eType="#//PersonEMF" eOpposite="#//PersonEMF/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trucks" upperBound="-1"
+        eType="#//TruckEMF" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drivers" upperBound="-1"
+        eType="#//DriverEMF" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PersonEMF">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -32,5 +36,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//PersonEMF"
         eOpposite="#//PersonEMF/cars"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TruckEMF">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TruckType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="driver" eType="#//DriverEMF"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="axles" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastService" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//LocalDateTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="departureTime" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//LocalTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//Color"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loadingTime" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//RealDistribution"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" eType="ecore:EClass ../../com.amalgamasimulation.timeseriesdatamodel/model/timeseriesdatamodel.ecore#//TimeSeries"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DriverEMF">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TruckType">
+    <eLiterals name="FLATBED"/>
+    <eLiterals name="REFRIGERATOR" value="1"/>
+    <eLiterals name="DUMP_TRUCK" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

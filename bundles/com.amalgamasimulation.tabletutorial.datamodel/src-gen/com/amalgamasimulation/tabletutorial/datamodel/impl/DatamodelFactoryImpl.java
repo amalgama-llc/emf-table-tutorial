@@ -63,6 +63,10 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 			return createPersonEMF();
 		case DatamodelPackage.CAR_EMF:
 			return createCarEMF();
+		case DatamodelPackage.TRUCK_EMF:
+			return createTruckEMF();
+		case DatamodelPackage.DRIVER_EMF:
+			return createDriverEMF();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,6 +82,8 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 		switch (eDataType.getClassifierID()) {
 		case DatamodelPackage.COUNTRY:
 			return createCountryFromString(eDataType, initialValue);
+		case DatamodelPackage.TRUCK_TYPE:
+			return createTruckTypeFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -93,6 +99,8 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 		switch (eDataType.getClassifierID()) {
 		case DatamodelPackage.COUNTRY:
 			return convertCountryToString(eDataType, instanceValue);
+		case DatamodelPackage.TRUCK_TYPE:
+			return convertTruckTypeToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -136,6 +144,28 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public TruckEMF createTruckEMF() {
+		TruckEMFImpl truckEMF = new TruckEMFImpl();
+		return truckEMF;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DriverEMF createDriverEMF() {
+		DriverEMFImpl driverEMF = new DriverEMFImpl();
+		return driverEMF;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Country createCountryFromString(EDataType eDataType, String initialValue) {
 		Country result = Country.get(initialValue);
 		if (result == null)
@@ -150,6 +180,28 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * @generated
 	 */
 	public String convertCountryToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TruckType createTruckTypeFromString(EDataType eDataType, String initialValue) {
+		TruckType result = TruckType.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTruckTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
